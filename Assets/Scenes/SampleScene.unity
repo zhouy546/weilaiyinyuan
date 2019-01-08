@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -194,6 +194,8 @@ GameObject:
   - component: {fileID: 282840817}
   - component: {fileID: 282840819}
   - component: {fileID: 282840812}
+  - component: {fileID: 282840821}
+  - component: {fileID: 282840820}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -220,8 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   udpData_str: 
-  m_ReceivePort: 29010
-  m_ip: 192.168.1.254
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -327,6 +327,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8342135dc0462a54d8be488df7ea6b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &282840820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e0316e4c6c4aa45a3fadba44bc9f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config:
+    configFile: '%USERPROFILE%\EdgeBlending_Config.json'
+    guiModeToggleKey: 98
+--- !u!114 &282840821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b1639abc391354ea107e668d8f2f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    invalid: 0
+    screens:
+      x: 2
+      y: 1
+    outputKeyword: 2
+    wireframeKeyword: 1
+    textureBlendkeyword: 0
+    maskTextureIndex: 1
+    trapeziums:
+    - p00: {x: 0, y: 0}
+      p10: {x: 0, y: 0}
+      p01: {x: 0, y: 0}
+      p11: {x: 0, y: 0}
+    - p00: {x: 0, y: 0}
+      p10: {x: 0, y: 0}
+      p01: {x: 0, y: 0}
+      p11: {x: 0, y: 0}
+    edges:
+    - {x: 0, y: 0, z: -0.22979772, w: 0}
+    - {x: 0.22979772, y: 0, z: 0, w: 0}
+    viewportOffsets:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: -0.11489886, y: 0, z: 0, w: 0}
+  shader: {fileID: 4800000, guid: b3670f08723c08b4fb2eb5aeedb26a7f, type: 3}
+  gridDentisy: 20
+  maskTextureSelection: []
 --- !u!1 &296663294
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +604,8 @@ Canvas:
   m_GameObject: {fileID: 458672601}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 282840813}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

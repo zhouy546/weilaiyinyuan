@@ -17,7 +17,7 @@ public class ini : MonoBehaviour {
     IEnumerator initialization() {
         readJson = FindObjectOfType<ReadJson>();
         bGctr = FindObjectOfType<BGctr>();
-        Cursor.visible = false;
+       // Cursor.visible = false;
         yield return StartCoroutine(readJson.initialization());
 
         yield return StartCoroutine(LoadBG());

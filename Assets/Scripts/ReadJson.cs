@@ -72,6 +72,8 @@ public class ReadJson : MonoBehaviour {
 
         ValueSheet.BgVideoPath = itemDate["Commond"]["BGVideo"].ToString();
 
+        ValueSheet.width = int.Parse(itemDate["Commond"]["width"].ToString());
+        ValueSheet.height = int.Parse(itemDate["Commond"]["height"].ToString());
     }
 
 

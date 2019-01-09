@@ -2,7 +2,7 @@
     "Setup" : [
         {
             "UDP":"2030",
-            "videoName" : "准东zhge.mp4"       
+            "videoName" : "2.mp4"       
         } 
     ],
     
@@ -15,9 +15,10 @@
         "turnOffLight":"9999",
         "BGtexture":"BG.jpg",
         "ServerIP":"192.168.1.254",
-        "ServerPort":"29010"
+        "ServerPort":"29010",
        
-        
+        "width":3360,
+        "height":1200
     }
 
 }

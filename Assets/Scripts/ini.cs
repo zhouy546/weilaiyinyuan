@@ -19,17 +19,15 @@ public class ini : MonoBehaviour {
 
         readJson = FindObjectOfType<ReadJson>();
         bGctr = FindObjectOfType<BGctr>();
-<<<<<<< HEAD
-       // Cursor.visible = false;
-=======
+
         removeTheWindowsBorder = FindObjectOfType<RemoveTheWindowsBorder>();
         videoCtr = FindObjectOfType<VideoCtr>();
 
-        Cursor.visible = false;
->>>>>>> new
+        //Cursor.visible = false;
+
         yield return StartCoroutine(readJson.initialization());
 
-        
+        yield return StartCoroutine(removeTheWindowsBorder.initialization());
 
         yield return StartCoroutine(LoadBG());
 

@@ -6,23 +6,37 @@ using UnityEngine;
 public class ini : MonoBehaviour {
     ReadJson readJson;
     BGctr bGctr;
+    RemoveTheWindowsBorder removeTheWindowsBorder;
 
-
-
-	void Start () {
+    VideoCtr videoCtr;
+	public void Start () {
         StartCoroutine(initialization());
 
     }
 
     IEnumerator initialization() {
+     
+
         readJson = FindObjectOfType<ReadJson>();
         bGctr = FindObjectOfType<BGctr>();
+<<<<<<< HEAD
        // Cursor.visible = false;
+=======
+        removeTheWindowsBorder = FindObjectOfType<RemoveTheWindowsBorder>();
+        videoCtr = FindObjectOfType<VideoCtr>();
+
+        Cursor.visible = false;
+>>>>>>> new
         yield return StartCoroutine(readJson.initialization());
+
+        
 
         yield return StartCoroutine(LoadBG());
 
         bGctr.initialization();
+
+        videoCtr.initialization();
+
     }
 
 

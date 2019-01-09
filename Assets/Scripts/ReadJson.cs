@@ -67,6 +67,11 @@ public class ReadJson : MonoBehaviour {
 
         ValueSheet.ServerIP = itemDate["Commond"]["ServerIP"].ToString();
         ValueSheet.ServerPort = int.Parse( itemDate["Commond"]["ServerPort"].ToString());
+
+        ValueSheet.IsVideoBG = itemDate["Commond"]["IsVideoBG"].ToString();
+
+        ValueSheet.BgVideoPath = itemDate["Commond"]["BGVideo"].ToString();
+
     }
 
 

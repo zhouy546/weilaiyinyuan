@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ValueSheet : MonoBehaviour {
+    public static int width;
+
+    public static int height;
+
     public static List<string> videoName = new List<string>();
     public static List<string> VideoUDP = new List<string>();
 
@@ -17,4 +21,8 @@ public class ValueSheet : MonoBehaviour {
     public static string ServerIP;
 
     public static int ServerPort;
+
+    public static string IsVideoBG;
+
+    public static string BgVideoPath;
 }

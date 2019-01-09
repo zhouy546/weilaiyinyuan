@@ -11,8 +11,8 @@ public class VideoCtr : MonoBehaviour {
     public MediaPlayer mediaPlayer;
     public Animator animator;
     // Use this for initialization
-	void Start () {
-		
+	public void initialization() {
+        stop();
 	}
 
     private void OnEnable()
@@ -40,23 +40,42 @@ public class VideoCtr : MonoBehaviour {
     {
         mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, str, true);
         animator.SetBool("Show", true);
-
+     
         //Debug.Log(ValueSheet.TurnOffLight);
-        SendUPDData.instance.udp_Send(ValueSheet.TurnOffLight);//关灯
+
+        if (str != ValueSheet.BgVideoPath) {
+            SendUPDData.instance.udp_Send(ValueSheet.TurnOffLight);//关灯
+            mediaPlayer.Control.SetLooping(false);
+        }
     }
 
     private void stop() {
-        mediaPlayer.Stop();
-        animator.SetBool("Show", false);
-        //Debug.Log(ValueSheet.TurnOnLight);
-        SendUPDData.instance.udp_Send(ValueSheet.TurnOnLight);//开灯
+
+        if (ValueSheet.IsVideoBG == "true") {
+            play(ValueSheet.BgVideoPath);
+            mediaPlayer.Control.SetLooping(true);
+
+            //animator.SetBool("Show", false);
+            //Debug.Log(ValueSheet.TurnOnLight);
+            SendUPDData.instance.udp_Send(ValueSheet.TurnOnLight);//开灯
+        }
+        else if(ValueSheet.IsVideoBG == "false")
+        {
+            mediaPlayer.Stop();
+            animator.SetBool("Show", false);
+            //Debug.Log(ValueSheet.TurnOnLight);
+            SendUPDData.instance.udp_Send(ValueSheet.TurnOnLight);//开灯
+
+        }
+
+
 
     }
 
     public void onVideoFinished() {
-        animator.SetBool("Show", false);
-      //  Debug.Log(ValueSheet.TurnOnLight);
-        SendUPDData.instance.udp_Send(ValueSheet.TurnOnLight);//开灯
+        stop();
+
+
     }
 
 }

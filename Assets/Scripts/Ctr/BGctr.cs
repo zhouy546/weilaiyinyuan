@@ -9,6 +9,11 @@ public class BGctr : MonoBehaviour {
 	public void initialization() {
         image.sprite = ValueSheet.BGsprite[0];
 	}
-	
+
+    public void OnApplicationQuit()
+    {
+        
+    }
+
 
 }

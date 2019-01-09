@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 282840817}
   - component: {fileID: 282840819}
   - component: {fileID: 282840812}
+  - component: {fileID: 282840820}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -220,8 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   udpData_str: 
-  m_ReceivePort: 29010
-  m_ip: 192.168.1.254
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -327,6 +326,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8342135dc0462a54d8be488df7ea6b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &282840820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fba0c528d6c8d84b8ede3d3c7c069bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &296663294
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,8 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VideoLocation: 2
-  m_VideoPath: 2.mp4
-  m_AutoOpen: 1
+  m_VideoPath: 
+  m_AutoOpen: 0
   m_AutoStart: 0
   m_Loop: 0
   m_Volume: 1

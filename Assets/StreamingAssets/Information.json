@@ -2,25 +2,21 @@
     "Setup" : [
         {
             "UDP":"2030",
-            "videoName" : "2.mp4"       
+            "videoName" : "准东zhge.mp4"       
         } 
-        ,{
-            "UDP":"2032",
-            "videoName" : "2.mp4"  
-        }
-        ,{
-            "UDP":"2033",
-            "videoName" : "2.mp4"  
-        }
     ],
     
     "Commond":{
+        "IsVideoBG":"true",
         "back":"2031",
-        "turnOnLight":"1200",
-        "turnOffLight":"1201",
+        "BGVideo":"ScreenProtect.mp4",
+        
+        "turnOnLight":"9999",
+        "turnOffLight":"9999",
         "BGtexture":"BG.jpg",
-        "ServerIP":"192.168.30.187",
+        "ServerIP":"192.168.1.254",
         "ServerPort":"29010"
+       
         
     }
 

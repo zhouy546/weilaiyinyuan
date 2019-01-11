@@ -9,13 +9,15 @@ public class ini : MonoBehaviour {
     RemoveTheWindowsBorder removeTheWindowsBorder;
 
     VideoCtr videoCtr;
+
+    public bool isSetRes;
 	public void Start () {
         StartCoroutine(initialization());
 
     }
 
     IEnumerator initialization() {
-     
+
 
         readJson = FindObjectOfType<ReadJson>();
         bGctr = FindObjectOfType<BGctr>();
@@ -26,8 +28,9 @@ public class ini : MonoBehaviour {
         //Cursor.visible = false;
 
         yield return StartCoroutine(readJson.initialization());
-
-        yield return StartCoroutine(removeTheWindowsBorder.initialization());
+        if (isSetRes) {
+            yield return StartCoroutine(removeTheWindowsBorder.initialization());
+        }      
 
         yield return StartCoroutine(LoadBG());
 

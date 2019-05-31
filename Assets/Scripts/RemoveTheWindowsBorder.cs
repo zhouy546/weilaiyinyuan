@@ -20,13 +20,17 @@ public class RemoveTheWindowsBorder : MonoBehaviour
 
     int _posX = 0;
     int _posY = 0;
-    //int _Txtwith = 4352;
-   // int _Txtheight = 5248;
+    public int _Txtwith = 4352;
+   public  int _Txtheight = 5248;
     public IEnumerator initialization()
     {
-        Screen.SetResolution(ValueSheet.width, ValueSheet.height, false);
-        yield return StartCoroutine("Setposition");
+
+#if !UNITY_EDITOR
+     //   Screen.SetResolution(   ValueSheet.width,     ValueSheet.height, true);
+ //       yield return StartCoroutine("Setposition");
         //StartCoroutine("ReSetposition");
+#endif
+        yield return new WaitForSeconds(0.1f);
     }
 
 

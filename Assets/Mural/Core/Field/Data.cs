@@ -20,14 +20,19 @@ namespace nobnak.Blending.Field {
         protected int maskTextureIndex;
 
         [SerializeField]
-        protected Trapezium[] trapeziums;
+        protected Trapezium[] trapeziums = new Trapezium[0];
 
         [SerializeField]
-        protected Vector4[] edges;
+        protected Vector4[] edges = new Vector4[0];
 
         [SerializeField]
-        protected Vector4[] viewportOffsets;
+        protected Vector4[] viewportOffsets = new Vector4[0];
 
+        public Data() {
+            Reset();
+        }
+
+        #region interface
         public bool MakeSureValidated() {
             if (invalid) {
                 invalid = false;
@@ -46,16 +51,6 @@ namespace nobnak.Blending.Field {
             viewportOffsets = new Vector4[1];
         }
 
-        protected void Validate() {
-            screens.x = Mathf.Max(screens.x, 1);
-            screens.y = Mathf.Max(screens.y, 1);
-            var screenCount = screens.x * screens.y;
-            System.Array.Resize(ref trapeziums, screenCount);
-            System.Array.Resize(ref edges, screenCount);
-            System.Array.Resize(ref viewportOffsets, screenCount);
-        }
-
-        #region Interface
         public Int2 Screens {
             get { return screens; }
             set {
@@ -102,6 +97,17 @@ namespace nobnak.Blending.Field {
         public int MaskTextureIndex {
             get { return maskTextureIndex; }
             set { maskTextureIndex = value; }
+        }
+        #endregion
+
+        #region member
+        protected void Validate() {
+            screens.x = Mathf.Max(screens.x, 1);
+            screens.y = Mathf.Max(screens.y, 1);
+            var screenCount = screens.x * screens.y;
+            System.Array.Resize(ref trapeziums, screenCount);
+            System.Array.Resize(ref edges, screenCount);
+            System.Array.Resize(ref viewportOffsets, screenCount);
         }
         #endregion
     }

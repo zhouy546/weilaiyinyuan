@@ -20,7 +20,7 @@ namespace nobnak.Blending {
         public const float REGION_GAP = 10f;
 
         [SerializeField]
-        protected Config config;
+        protected Config config = new Config();
 
         protected Blending blending;
         protected Camera targetCamera;

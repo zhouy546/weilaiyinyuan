@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace nobnak.Blending.Matrix {
     public class EdgeToLocalUvMatrix : ViewportMatrixBuffer {
-        
-        protected Vector4[] edges;
+
+        protected Vector4[] edges = new Vector4[0];
 
         #region Input
         public Vector4[] Edges {

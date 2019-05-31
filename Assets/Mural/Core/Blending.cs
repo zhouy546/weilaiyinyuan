@@ -19,7 +19,7 @@ namespace nobnak.Blending {
         public const string SHADER_BLENDING = "Hidden/Blending";
 
         [SerializeField]
-        protected Data data;
+        protected Data data = new Data();
 
         [SerializeField]
         protected Shader shader;
